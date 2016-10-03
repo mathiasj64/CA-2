@@ -11,11 +11,11 @@ import javax.persistence.ManyToMany;
 @Entity
 public class Hobby
 {
-    String name;
-    String description;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    String name;
+    String description;
     
   @ManyToMany
     ArrayList<Person> persons = new ArrayList();
