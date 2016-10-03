@@ -2,6 +2,7 @@ package entity;
 
 //@author Mathias
 import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,6 +21,14 @@ public class CityInfo
   int zipCode;
   String city;
 
+  @OneToMany(mappedBy = "cityInfo")
+  private List<Address> addresses = new ArrayList();
+  
+  public CityInfo()
+  {
+
+  }
+  
   public int getId()
   {
     return id;
@@ -50,7 +59,7 @@ public class CityInfo
     this.city = city;
   }
 
-  public ArrayList<Address> getAddresses()
+  public List<Address> getAddresses()
   {
     return addresses;
   }
@@ -60,16 +69,4 @@ public class CityInfo
     this.addresses = addresses;
   }
 
-  
-  @OneToMany(mappedBy = "cityInfo")
-  private ArrayList<Address> addresses = new ArrayList();
-  
-  
-  
-  
-  
-  public CityInfo()
-  {
-
-  }
 }

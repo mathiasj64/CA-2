@@ -9,9 +9,6 @@ public class CompanyFacade
 {
 
   EntityManagerFactory emf;
-
-//      EntityManagerFactory emf = Persistence.createEntityManagerFactory("rest_1_2PU");
-//      CompanyFacade cf = new CompanyFacade(emf);
       
   public CompanyFacade(EntityManagerFactory emf)
   {  

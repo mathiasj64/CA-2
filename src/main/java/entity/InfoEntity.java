@@ -1,6 +1,7 @@
 package entity;
 
 import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +22,7 @@ public class InfoEntity
     String email;
 
   @OneToMany(mappedBy = "infoEntity")
-    private ArrayList<Phone> phones = new ArrayList();
+    private List<Phone> phones = new ArrayList();
   @ManyToOne
   private Address address;
     

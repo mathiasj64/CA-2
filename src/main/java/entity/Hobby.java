@@ -2,6 +2,7 @@ package entity;
 
 
 import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +19,7 @@ public class Hobby
     String description;
     
   @ManyToMany
-    ArrayList<Person> persons = new ArrayList();
+    List<Person> persons = new ArrayList();
     
     public Hobby()
     {
