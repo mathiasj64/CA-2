@@ -13,7 +13,7 @@ public class Run
 
         puproperties.put("javax.persistence.sql-load-script-source", "scripts/ClearDB.sql");
 
-        puproperties.put("javax.persistence.schema-generation.database.action", "create");
+        puproperties.put("javax.persistence.schema-generation.database.action", "drop-and-create");
 
         Persistence.generateSchema("CA2PU", puproperties);
     }
