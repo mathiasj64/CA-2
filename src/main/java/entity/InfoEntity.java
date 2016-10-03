@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class InfoEntity 
@@ -15,7 +17,10 @@ public class InfoEntity
     private int id;
     String email;
 
+  @OneToMany(mappedBy = "infoEntity")
     private ArrayList<Phone> phones = new ArrayList();
+  @ManyToOne
+  private Address address;
     
     
     public InfoEntity()

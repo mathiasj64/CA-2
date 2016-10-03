@@ -2,11 +2,13 @@ package entity;
 
 //@author Mathias
 
+import java.util.ArrayList;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Address {
@@ -20,6 +22,10 @@ public class Address {
   @ManyToOne
   private CityInfo cityInfo;
 
+  @OneToMany(mappedBy = "address")
+  ArrayList<InfoEntity> infoEntities = new ArrayList();
+  
+  
   public int getId()
   {
     return id;
