@@ -5,6 +5,9 @@
  */
 package Rest;
 
+import facade.CompanyFacade;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
@@ -19,36 +22,27 @@ import javax.ws.rs.core.MediaType;
  *
  * @author Philip
  */
-@Path("generic")
+@Path("person")
 public class Person
 {
 
     @Context
     private UriInfo context;
 
-    /**
-     * Creates a new instance of Person
-     */
     public Person()
     {
     }
 
-    /**
-     * Retrieves representation of an instance of Structure.Person
-     * @return an instance of java.lang.String
-     */
     @GET
+    @Path("company")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getJson()
+    public String getCompany()
     {
-        //TODO return proper representation object
-        throw new UnsupportedOperationException();
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("CA2PU");
+        CompanyFacade cf = new CompanyFacade(emf);
+        return "lol";
     }
 
-    /**
-     * PUT method for updating or creating an instance of Person
-     * @param content representation for the resource
-     */
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public void putJson(String content)

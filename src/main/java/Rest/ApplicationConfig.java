@@ -4,7 +4,7 @@ import java.util.Set;
 import javax.ws.rs.core.Application;
 
 
-@javax.ws.rs.ApplicationPath("webresources")
+@javax.ws.rs.ApplicationPath("api")
 public class ApplicationConfig extends Application {
 
     @Override
@@ -15,12 +15,6 @@ public class ApplicationConfig extends Application {
         return resources;
     }
 
-    /**
-     * Do not modify addRestResourceClasses() method.
-     * It is automatically populated with
-     * all resources defined in the project.
-     * If required, comment out calling this method in getClasses().
-     */
     private void addRestResourceClasses(Set<Class<?>> resources)
     {
         resources.add(Rest.Person.class);
