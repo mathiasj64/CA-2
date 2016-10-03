@@ -1,5 +1,6 @@
 package entity;
 
+import java.util.ArrayList;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,10 +15,15 @@ public class InfoEntity
     private int id;
     String email;
 
+    private ArrayList<Phone> phones = new ArrayList();
+    
+    
     public InfoEntity()
     {
         
     }
+    
+    
 
     public int getId()
     {
