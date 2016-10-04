@@ -15,7 +15,7 @@ public class CompanyFacade
     this.emf = emf;
   }
 
-  Company getCompany(int cvr)
+  public Company getCompany(int cvr)
   {
     Company c = null;
     EntityManager em = emf.createEntityManager();
@@ -32,6 +32,11 @@ public class CompanyFacade
     {
       em.close();
     }
+  }
+  
+  public List<Company> getBigCompanies(int minEmployees)
+  {
+    
   }
 
 }

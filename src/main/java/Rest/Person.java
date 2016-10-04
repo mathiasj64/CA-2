@@ -25,27 +25,29 @@ import javax.ws.rs.core.MediaType;
 @Path("person")
 public class Person
 {
+  CompanyFacade cf;
 
-    @Context
-    private UriInfo context;
+  @Context
+  private UriInfo context;
 
-    public Person()
-    {
-    }
+  public Person()
+  {
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("CA2PU");
+    cf = new CompanyFacade(emf);
+  }
 
-    @GET
-    @Path("company")
-    @Produces(MediaType.APPLICATION_JSON)
-    public String getCompany()
-    {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("CA2PU");
-        CompanyFacade cf = new CompanyFacade(emf);
-        return "lol";
-    }
+  @GET
+  @Path("company")
+  @Produces(MediaType.APPLICATION_JSON)
+  public String getCompany()
+  {
+    cf.getCompany(1);
+    return "lol";
+  }
 
-    @PUT
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void putJson(String content)
-    {
-    }
+  @PUT
+  @Consumes(MediaType.APPLICATION_JSON)
+  public void putJson(String content)
+  {
+  }
 }

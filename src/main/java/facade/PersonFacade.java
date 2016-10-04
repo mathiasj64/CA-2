@@ -6,6 +6,7 @@ import entity.Person;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Query;
 
 public class PersonFacade
 {
@@ -35,13 +36,37 @@ public class PersonFacade
     }
   }
 
-//  List<Person> getPersons()
-//  {
-//
-//  }
-//
-//  List<Person> getPersons(int zipCode)
-//  {
-//
-//  }
+  List<Person> getPersons()
+  {
+    List<Person> persons = null;
+    EntityManager em = emf.createEntityManager();
+
+    try
+    {
+      em.getTransaction().begin();
+      Query nQuery5 = em.createNamedQuery("Student.findAll");
+      List<Person> students5 = nQuery5.getResultList();
+      em.getTransaction().commit();
+      System.out.println("person: " + p.getFirstName());
+      return persons;
+    } finally
+    {
+      em.close();
+    }
+  }
+
+  List<Person> getPersons(int zipCode)
+  {
+
+  }
+
+  List<Person> getPersons(String hobby)
+  {
+
+  }
+
+  int getPersonAmount(String hobby)
+  {
+
+  }
 }

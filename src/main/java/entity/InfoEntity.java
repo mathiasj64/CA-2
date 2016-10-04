@@ -32,6 +32,11 @@ public class InfoEntity
         
     }
     
+    public InfoEntity(String email)
+    {
+      this.email = email;
+    }
+    
     
 
     public int getId()
