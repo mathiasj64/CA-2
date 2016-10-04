@@ -11,10 +11,11 @@ public class Run
     {
         HashMap<String, Object> puproperties = new HashMap<>();
 
-//        puproperties.put("javax.persistence.sql-load-script-source", "scripts/ClearDB.sql");
+        puproperties.put("javax.persistence.sql-load-script-source", "scripts/dummydata.sql");
 
         puproperties.put("javax.persistence.schema-generation.database.action", "drop-and-create");
 
         Persistence.generateSchema("CA2PU", puproperties);
+        
     }
 }
