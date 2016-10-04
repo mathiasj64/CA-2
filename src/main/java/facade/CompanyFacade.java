@@ -34,9 +34,9 @@ public class CompanyFacade
     }
   }
   
-  public List<Company> getBigCompanies(int minEmployees)
-  {
-    
-  }
+//  public List<Company> getBigCompanies(int minEmployees)
+//  {
+//    
+//  }
 
 }

@@ -36,37 +36,37 @@ public class PersonFacade
     }
   }
 
-  List<Person> getPersons()
-  {
-    List<Person> persons = null;
-    EntityManager em = emf.createEntityManager();
+//  List<Person> getPersons()
+//  {
+//    List<Person> persons = null;
+//    EntityManager em = emf.createEntityManager();
+//
+//    try
+//    {
+//      em.getTransaction().begin();
+//      Query nQuery5 = em.createNamedQuery("Person.findAll");
+//      List<Person> students5 = nQuery5.getResultList();
+//      em.getTransaction().commit();
+//      System.out.println("person: " + p.getFirstName());
+//      return persons;
+//    } finally
+//    {
+//      em.close();
+//    }
+//  }
 
-    try
-    {
-      em.getTransaction().begin();
-      Query nQuery5 = em.createNamedQuery("Student.findAll");
-      List<Person> students5 = nQuery5.getResultList();
-      em.getTransaction().commit();
-      System.out.println("person: " + p.getFirstName());
-      return persons;
-    } finally
-    {
-      em.close();
-    }
-  }
-
-  List<Person> getPersons(int zipCode)
-  {
-
-  }
-
-  List<Person> getPersons(String hobby)
-  {
-
-  }
-
-  int getPersonAmount(String hobby)
-  {
-
-  }
+//  List<Person> getPersons(int zipCode)
+//  {
+//
+//  }
+//
+//  List<Person> getPersons(String hobby)
+//  {
+//
+//  }
+//
+//  int getPersonAmount(String hobby)
+//  {
+//
+//  }
 }

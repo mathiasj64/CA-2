@@ -5,6 +5,7 @@
  */
 package Rest;
 
+import entity.Company;
 import facade.CompanyFacade;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -25,24 +26,26 @@ import javax.ws.rs.core.MediaType;
 @Path("person")
 public class Person
 {
+
   CompanyFacade cf;
 
   @Context
   private UriInfo context;
 
-  public Person()
-  {
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("CA2PU");
-    cf = new CompanyFacade(emf);
-  }
+//  public Person()
+//  {
+//    EntityManagerFactory emf = Persistence.createEntityManagerFactory("CA2PU");
+//    cf = new CompanyFacade(emf);
+//  }
 
   @GET
   @Path("company")
   @Produces(MediaType.APPLICATION_JSON)
   public String getCompany()
   {
-    cf.getCompany(1);
-    return "lol";
+//    Company c = cf.getCompany(1);
+//    return c.getName();
+    return "{\"name\":\"Henrik\"}";
   }
 
   @PUT

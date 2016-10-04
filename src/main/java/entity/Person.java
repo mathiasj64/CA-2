@@ -13,8 +13,8 @@ import javax.persistence.Table;
 
 @NamedQueries(
         {
-          @NamedQuery(name = "Student.findAll", query = "SELECT p FROM Person p"),
-          @NamedQuery(name = "Student.findById", query = "SELECT p FROM Student s WHERE s.id = :id"),
+//          @NamedQuery(name = "person.findAll", query = "SELECT p FROM person p"),
+//          @NamedQuery(name = "person.findById", query = "SELECT p FROM person p WHERE p.id = :id"),
         })
 
 public class Person extends InfoEntity
