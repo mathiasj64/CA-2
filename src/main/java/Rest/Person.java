@@ -7,6 +7,7 @@ package Rest;
 
 import entity.Company;
 import facade.CompanyFacade;
+import facade.PersonFacade;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.ws.rs.core.Context;
@@ -28,6 +29,7 @@ public class Person
 {
 
   CompanyFacade cf;
+  PersonFacade pf;
 
   @Context
   private UriInfo context;
@@ -39,8 +41,7 @@ public class Person
 //  }
 
   @GET
-  @Path("company")
-  @Produces(MediaType.APPLICATION_JSON)
+//  @Produces(MediaType.APPLICATION_JSON)
   public String getCompany()
   {
 //    Company c = cf.getCompany(1);

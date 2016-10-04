@@ -1,6 +1,7 @@
 package entity;
 
 //@author Mathias
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
@@ -15,9 +16,11 @@ import javax.persistence.Table;
         {
 //          @NamedQuery(name = "person.findAll", query = "SELECT p FROM person p"),
 //          @NamedQuery(name = "person.findById", query = "SELECT p FROM person p WHERE p.id = :id"),
+          @NamedQuery(name = "person.findAll", query = "SELECT p FROM Person p")
+//          @NamedQuery(name = "Student.findById", query = "SELECT p FROM Student s WHERE s.id = :id"),
         })
 
-public class Person extends InfoEntity
+public class Person extends InfoEntity implements Serializable
 {
 
   String firstName;
