@@ -5,8 +5,8 @@ package facade;
 public class CityInfoFacade {
 
   
-  int[] getZipcodes()
-  {
-    
-  }
+//  int[] getZipcodes()
+//  {
+//    
+//  }
 }
